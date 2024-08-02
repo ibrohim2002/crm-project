@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import RightArrow from "../../assets/icons/arrow.svg?react"
 
 export const Container = styled.div`
   display: flex;
@@ -15,13 +16,13 @@ font-weight: 500;
 line-height: 20px;
 text-align: left;
 padding: 12px 24px;
-color: rgba(24, 144, 255, 1);
+color: #929FAF;
 `;
 
 export const Title = styled.div`
   ${common};
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 `;
 
 Title.Main = styled.div`
@@ -35,3 +36,7 @@ Title.Exit = styled.div`
   ${common};
   margin-top: auto;
 `;
+
+export const Arrow = styled(RightArrow)`
+  margin-left: auto;
+`
