@@ -6,8 +6,8 @@ const Profile = () => {
     <>
       <Container>
         <Image src={userImg} />
-        <Username>Ibrokhim Dadamukhamedov</Username>
-        <Email>i.dadamukhamedov@gmail.com</Email>
+        <div><Username>Ibrokhim Dadamukhamedov</Username>
+        <Email>ibrokhim@gmail.com</Email></div>
       </Container>
     </>
   );

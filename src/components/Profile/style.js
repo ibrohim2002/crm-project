@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
   padding: 12px 24px;
 `;
 
@@ -10,6 +9,8 @@ export const Image = styled.img`
   display: inline;
   border-radius: 50%;
   width: 48px;
+  height: 48px;
+  padding-right: 10px;
 `;
 
 export const Username = styled.div`
