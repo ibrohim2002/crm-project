@@ -48,7 +48,7 @@ export const Title = styled.div`
 
 Title.Main = styled.div`
   ${common};
-  color: #1890FF;
+  color: #1890ff;
   font-size: 20px;
   font-weight: 600;
   line-height: 28px;

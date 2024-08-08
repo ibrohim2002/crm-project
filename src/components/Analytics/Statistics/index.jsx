@@ -1,21 +1,29 @@
 import React from "react";
 import { statistics } from "../../../mock/statistics";
-import { Title, Wrapper } from "./style";
+import { Image, Title, Wrapper } from "./style";
 import { Container } from "./style";
 
 export const Statistics = () => {
-  console.log(statistics);
   return (
+    <div>
+<Title.Container>Analytics</Title.Container>
     <Container>
       {statistics.map((item) => {
+        const { icon: Icon } = item;
         return (
           <Wrapper key={item.id} color={item.backColor}>
-            <Title>{item.title}</Title>
-            <Title.Number>{item.number}</Title.Number>
-            <img src='../../../assets/statistics/student.png'/>
+            <Container.Card>
+              <Icon />
+              <Title>{item.title}</Title>
+            </Container.Card>
+            <Container.Card>
+              <Title.Number>{item.number}</Title.Number>
+              <Image src={item.image} />
+            </Container.Card>
           </Wrapper>
         );
       })}
     </Container>
+          </div>
   );
 };

@@ -1,40 +1,36 @@
-import Instagram from "../assets/icons/instagram.svg?react";
-import Telegram from "../assets/icons/telegram.svg?react";
-import Youtube from "../assets/icons/youtube.svg?react";
-import Linkedin from "../assets/icons/linkedin.svg?react";
+import img from "../assets/image.png";
 
 export const mail = [
   {
     id: 1,
-    name: "Salima Fayziyeva",
+    name: "Jamshid Murodov",
     title: "Marketolog",
-    icon: Instagram,
+    image: img,
     question: "Zoom uchrashuv",
-    time: "12:45"
+    time: "12:45",
   },
   {
     id: 2,
-    name: "Salima Fayziyeva",
+    name: "Jamshid Murodov",
     title: "Marketolog",
-    icon: Telegram,
+    image: img,
     question: "Zoom uchrashuv",
-    time: "12:45"
-    
+    time: "12:45",
   },
   {
     id: 3,
-    name: "Salima Fayziyeva",
+    name: "Jamshid Murodov",
     title: "Marketolog",
-    icon: Youtube,
+    image: img,
     question: "Zoom uchrashuv",
-    time: "12:45"
+    time: "12:45",
   },
   {
     id: 4,
-    name: "Salima Fayziyeva",
+    name: "Jamshid Murodov",
     title: "Marketolog",
-    icon: Linkedin,
+    image: img,
     question: "Zoom uchrashuv",
-    time: "12:45"
+    time: "12:45",
   },
 ];

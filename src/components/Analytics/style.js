@@ -14,5 +14,5 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-left: auto;
+  gap: 30px;
 `;

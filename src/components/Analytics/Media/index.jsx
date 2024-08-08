@@ -5,20 +5,20 @@ import { socials } from "../../../mock/socials";
 export const Media = () => {
   return (
     <>
-      Ijtimoiy tarmoqlar
+      <Title.Container>Ijtimoiy tarmoqlar</Title.Container>
       <Container>
         {socials.map((item) => {
           const { icon: Icon } = item;
           return (
             <Wrapper key={item.id}>
-              <Container>
+              <Container.Card>
                 <Icon />
                 <Title>{item.title}</Title>
-              </Container>
-              <Container>
-                <Title.Percent>{item.percent}</Title.Percent>
-                <Title.Number>{item.number}</Title.Number>
-              </Container>
+              </Container.Card>
+              <Container.Card>
+                <Title.Percent>{item.percent}%</Title.Percent>
+                <Title.Number>{item.number}k</Title.Number>
+              </Container.Card>
             </Wrapper>
           );
         })}

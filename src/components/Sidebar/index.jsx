@@ -6,7 +6,7 @@ import { Arrow } from "./style";
 import { sidebar } from "../../mock/sidebar.js";
 
 const Sidebar = () => {
-  const [open, setOpen] = useState([]);
+  const [open, setOpen] = useState(JSON.parse(localStorage.getItem('open'))||[]);
   const [state, setState] = useState("Analitics");
 
   const onChange = (e, id, name) => {
@@ -14,10 +14,11 @@ const Sidebar = () => {
     if (open.includes(id)) {
       let res = open.filter((val) => id !== val);
       setOpen(res);
+      localStorage.setItem('open',JSON.stringify(res))
     } else {
       setOpen([...open, id]);
+      localStorage.setItem('open',JSON.stringify([...open, id]))
     }
-    console.log(e);
   };
   return (
     <div>

@@ -9,11 +9,19 @@ export const Wrapper = styled.div`
   flex-direction: column;
   background-color: ${({ color }) => color};
   box-sizing: border-box;
-  padding: 10px 16px;
+  padding: 24px;
   width: 334px;
   height: 128px;
   border-radius: 8px;
   border: solid 1px rgba(240, 240, 240, 1);
+  gap:16px;
+  justify-content: center;
+  align-items: center;
+`;
+
+Container.Card = styled(Container)`
+  align-items: center;
+  box-sizing: border-box;
 `;
 
 export const Title = styled.div`
@@ -31,4 +39,10 @@ Title.Number = styled(Title)`
 Title.Percent = styled(Title)`
   font-size: 22px;
   color: green;
+`;
+
+Title.Container = styled(Title)`
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px;
 `;

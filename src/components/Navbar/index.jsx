@@ -1,41 +1,79 @@
 import React, { useState } from "react";
-import { Container, Text, Input, Wrapper } from "./style";
+import {
+  Container,
+  Text,
+  Input,
+  Wrapper,
+  Search,
+  InputContainer,
+  Data,
+  Languages,
+  LangBtn,
+} from "./style";
 
 export const Navbar = () => {
-  const months = [
-    "Yanvar",
-    "Fevral",
-    "Mart",
-    "Aprel",
-    "May",
-    "Iyun",
-    "Iyuy",
-    "Avgust",
-    "Sentabr",
-    "Oktabr",
-    "Noyabr",
-    "Dekabr",
-  ];
+  const [lang, setLang] = useState(localStorage.getItem('language') || "O’zbekcha");
+  const [modal, setModal] = useState(0);
+  // const months = [
+  //   "Yanvar",
+  //   "Fevral",
+  //   "Mart",
+  //   "Aprel",
+  //   "May",
+  //   "Iyun",
+  //   "Iyuy",
+  //   "Avgust",
+  //   "Sentabr",
+  //   "Oktabr",
+  //   "Noyabr",
+  //   "Dekabr",
+  // ];
   const time = new Date();
-  let month = months[time.getMonth()];
+  // let month = months[time.getMonth()];
+  const onLanguage = (name) => {
+    localStorage.setItem("language", name);
+    setLang(name)
+    setModal(!modal)
+  };
+  
+  const onButton = () => {
+    setModal(!modal);
+  };
+
   return (
     <Container>
-      <Input type="text" placeholder="Search" />
+      <InputContainer>
+        <Search />
+        <Input type="text" placeholder="Search" />
+      </InputContainer>
       <Wrapper>
         <Text.Time>
-          {time.getHours()}:{time.getMinutes()}
+          {(time.getHours() < 10 ? "0" : "") + time.getHours()}:
+          {(time.getMinutes() < 10 ? "0" : "") + time.getMinutes()}
           <span className="time">{time.getHours() > 11 ? "PM" : "AM"}</span>
         </Text.Time>
-        <select name="" id="">
-          <option value="O'zbekcha">
-            {time.getDate()}-{month.toLowerCase()} {time.getFullYear()}
-          </option>
-        </select>
-        <select name="" id="">
-          <option value="O'zbekcha">O'zbekcha</option>
-          <option value="Русский">Русский</option>
-          <option value="English">English</option>
-        </select>
+        <Data
+          type="date"
+          id="start"
+          name="trip-start"
+          defaultValue={time.toJSON().slice(0, 10)}
+          min="2024-01-01"
+          max="2024-12-31"
+        />
+        <div style={{ position: "relative" }}>
+          <LangBtn.Main onClick={onButton}>{lang}</LangBtn.Main>
+          {modal ? (
+            <Languages>
+              <LangBtn onClick={() => onLanguage("O’zbekcha")}>
+                O’zbekcha
+              </LangBtn>
+              <LangBtn onClick={() => onLanguage("Russian")}>Russian</LangBtn>
+              <LangBtn onClick={() => onLanguage("English")}>English</LangBtn>
+            </Languages>
+          ) : (
+            ""
+          )}
+        </div>
       </Wrapper>
     </Container>
   );
