@@ -5,15 +5,15 @@ import { finance } from "../../../mock/finance";
 export const Moliya = () => {
   return (
     <div>
-      <Title.Container>Moliya</Title.Container>
+      <Title.Main>Moliya</Title.Main>
       <Container>
         {finance.map((item) => {
           return (
             <Wrapper key={item.id}>
-              <div>
-                <Title>{item.days}</Title>
-                <Title>{item.dates}</Title>
-              </div>
+              <Title.Container>
+                <Title className="title">{item.days}</Title>
+                <Title className="title">{item.dates}</Title>
+              </Title.Container>
             </Wrapper>
           );
         })}

@@ -2,16 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  /* background: rgba(22, 37, 57, 1);
-  width: 250px;
-  min-height: 100vh; */
-  `;
+`;
 export const Wrapper = styled.div`
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
+  align-items: center;
   position: relative;
-  background-color: white;
+  background-color: rgba(250, 250, 250, 1);
   height: 100vh;
   overflow: hidden scroll;
 `;

@@ -7,15 +7,11 @@ export const Container = styled.div`
   border-radius: 8px;
   box-sizing: border-box;
   padding: 24px;
-  `;
+`;
 export const Wrapper = styled.div`
   display: flex;
-  border: solid 1px rgba(240, 240, 240, 1);
   gap: 50px;
-  padding: 10px;
   box-sizing: border-box;
-  align-items: center;
-  border-radius: 18px;
 `;
 
 export const Title = styled.div`
@@ -25,10 +21,29 @@ export const Title = styled.div`
   line-height: 20px;
   text-align: left;
   color: rgba(37, 62, 95, 1);
-`;
+  `;
+
+Title.Main = styled(Title)`
+font-size: 16px;
+font-weight: 700;
+  padding: 16px;
+`
 
 Title.Container = styled(Title)`
-  font-size: 16px;
-  font-weight: 700;
-  padding: 16px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  width: 50px;
+  align-items: center;
+  border-radius: 18px;
+  border: solid 1px rgba(240, 240, 240, 1);
+  padding: 10px;
+  box-sizing: border-box;
+  &:hover {
+    background-color: #1890ff;
+    .title{
+      color: white;
+    }
+  }
 `;

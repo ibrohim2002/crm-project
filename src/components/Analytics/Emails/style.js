@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  /* gap: 24px; */
   border: solid 1px rgba(240, 240, 240, 1);
   border-radius: 8px;
   box-sizing: border-box;
@@ -15,8 +15,11 @@ export const Wrapper = styled.div`
   display: flex;
   box-sizing: border-box;
   align-items: center;
-  border-radius: 8px;
-  `;
+  padding: 6px;
+  &:hover {
+    background: #e1effd;
+  }
+`;
 
 Wrapper.Message = styled(Wrapper)`
   flex-direction: column;
