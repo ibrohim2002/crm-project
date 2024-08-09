@@ -1,29 +1,64 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { statistics } from "../../../mock/statistics";
+import student from "../../../assets/statistics/student.png";
+import mentors from "../../../assets/statistics/mentors.png";
+import branch from "../../../assets/statistics/branch.png";
+import StudentIcon from "../../../assets/statistics/studentIcon.svg?react";
+import MentorsIcon from "../../../assets/statistics/mentorIcon.svg?react";
+import BranchIcon from "../../../assets/statistics/branchIcon.svg?react";
+import ArrowUp from "../../../assets/statistics/arrow-up.svg?react";
 import { Image, Title, Wrapper } from "./style";
 import { Container } from "./style";
+import { useState } from "react";
 
 export const Statistics = () => {
+  const url =
+    "https://sheet.best/api/sheets/08c05757-65c7-4e6a-a744-36ad0714d2a1/tabs/analytics";
+
+  const [statistics, setStatistics] = useState([]);
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => setStatistics(res));
+  }, []);
   return (
     <div>
-<Title.Container>Analytics</Title.Container>
-    <Container>
-      {statistics.map((item) => {
-        const { icon: Icon } = item;
-        return (
-          <Wrapper key={item.id} color={item.backColor}>
-            <Container.Card>
-              <Icon />
-              <Title>{item.title}</Title>
-            </Container.Card>
-            <Container.Card>
-              <Title.Number>{item.number}</Title.Number>
-              <Image src={item.image} />
-            </Container.Card>
-          </Wrapper>
-        );
-      })}
-    </Container>
-          </div>
+      <Title.Container>Analytics</Title.Container>
+      <Container>
+        {statistics.map((item) => {
+          let icon;
+          let image;
+          switch (item.title) {
+            case "Talabalar":
+              icon = <StudentIcon />;
+              image = student
+              break;
+            case "Mentorlar":
+              icon = <MentorsIcon />;
+              image = mentors
+              break;
+            case "Filiallar":
+              icon = <BranchIcon />;
+              image = branch
+              break;
+            default:
+              "";
+          }
+          return (
+            <Wrapper key={item.id} color={item.backColor}>
+              <Container.Card>
+                {icon}
+                <Title>{item.title}</Title>
+              </Container.Card>
+              <Container.Card>
+                <ArrowUp/>
+                <Title.Number>{item.number}</Title.Number>
+                <Image src={image}/>
+              </Container.Card>
+            </Wrapper>
+          );
+        })}
+      </Container>
+    </div>
   );
 };

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  gap: 24px;
+  gap: 16px;
 `;
 export const Wrapper = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
   padding: 24px;
   width: 334px;
-  height: 128px;
+  /* height: 128px;/ */
   border-radius: 8px;
   border: solid 1px rgba(240, 240, 240, 1);
   gap:16px;
@@ -22,6 +22,7 @@ export const Wrapper = styled.div`
 Container.Card = styled(Container)`
   align-items: center;
   box-sizing: border-box;
+  width: 100%;
 `;
 
 export const Title = styled.div`

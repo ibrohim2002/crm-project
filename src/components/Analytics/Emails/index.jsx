@@ -1,25 +1,35 @@
 import React from "react";
 import { Container, Wrapper, Title } from "./style";
-import { useContext } from "react";
-import { MailContext } from "../../../context/mailContext";
+import { useState, useEffect } from "react";
+import img from "../../../assets/image.png";
 
 export const Emails = () => {
-  const [data] = useContext(MailContext);
+  const url =
+    "https://sheet.best/api/sheets/08c05757-65c7-4e6a-a744-36ad0714d2a1/tabs/roles";
+
+  const [mail, setMail] = useState([]);
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => setMail(res));
+  }, []);
   return (
     <div>
       <Title.Container>Email xabarlari</Title.Container>
       <Container>
-        {data.map((item) => {
+        {mail.map((item) => {
           return (
             <Wrapper key={item.id}>
-              <input type="checkbox" name="" id="" />
-              <img src={item.image} />
-              <div>
-                <Title>{item.name}</Title>
-                <Title.Job>{item.title}</Title.Job>
-              </div>
-              <Title>{item.question}</Title>
-              <Title.Job>{item.time}</Title.Job>
+              <Wrapper.Profile>
+                <input type="checkbox" name="" id="" />
+                <img src={img} />
+                <Wrapper.Message>
+                  <Title>{item.name}</Title>
+                  <Title.Job>{item.title}</Title.Job>
+                </Wrapper.Message>
+              </Wrapper.Profile>
+              <Title.Message>{item.message}</Title.Message>
+              <Title.Time>{item.day}</Title.Time>
             </Wrapper>
           );
         })}

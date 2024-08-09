@@ -19,7 +19,7 @@ export const Username = styled.div`
   font-weight: 600;
   line-height: 20px;
   text-align: left;
-  color: white;
+  color: #1890ff;
 `;
 
 export const Email = styled.div`

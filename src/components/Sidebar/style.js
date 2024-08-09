@@ -4,9 +4,11 @@ import RightArrow from "../../assets/icons/arrow.svg?react";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background: rgba(22, 37, 57, 1);
   width: 250px;
-  min-height: 100vh;
+  position: relative;
+  background-color: white;
+  height: 100vh;
+  overflow: hidden scroll;
 `;
 export const Wrapper = styled.div`
   display: flex;
@@ -56,7 +58,12 @@ Title.Main = styled.div`
 
 Title.Exit = styled.div`
   ${common};
+  display: flex;
   margin-top: auto;
+  width: 100%;
+  position: sticky;
+  bottom: 0px;
+  border-top: 1px solid rgb(222, 225, 227);
 `;
 
 export const Arrow = styled(RightArrow)`
