@@ -64,6 +64,7 @@ Title.Exit = styled.div`
   position: sticky;
   bottom: 0px;
   border-top: 1px solid rgb(222, 225, 227);
+  background-color: white;
 `;
 
 export const Arrow = styled(RightArrow)`
