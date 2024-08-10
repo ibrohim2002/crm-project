@@ -40,14 +40,14 @@ export const Moliya = () => {
         {/* {finance.map((item) => {
           return ( */}
         <Container.Price>
-          <Title.Price>{+finance[0].students + +finance[0].video}</Title.Price>
+          <Title.Price>8520000</Title.Price>
           <Container.Month>
             <Title>Talabalar</Title>
-            <Title>{finance[0].students}</Title>
+            <Title>2245000</Title>
           </Container.Month>
           <Container.Month>
             <Title>Darsliklar sotuvi</Title>
-            <Title>{finance[0].video}</Title>
+            <Title>11142000</Title>
           </Container.Month>
         </Container.Price>
         {/* );
