@@ -3,13 +3,16 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  /* gap: 24px; */
-  border: solid 1px rgba(240, 240, 240, 1);
-  border-radius: 8px;
-  box-sizing: border-box;
-  padding: 24px;
-  width: 695px;
-`;
+  width: 100%;
+  `;
+
+Container.Main = styled(Container)`
+border: solid 1px rgba(240, 240, 240, 1);
+border-radius: 8px;
+box-sizing: border-box;
+padding: 24px;
+  
+`
 
 export const Wrapper = styled.div`
   display: flex;

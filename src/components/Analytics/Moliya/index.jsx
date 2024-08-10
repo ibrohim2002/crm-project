@@ -1,22 +1,57 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Wrapper, Title } from "./style";
-import { finance } from "../../../mock/finance";
+// import { finance } from "../../../mock/finance";
+import moment from "moment/moment";
+import "moment/locale/uz-latn";
+import Arrow from "../../../assets/icons/arrow.svg?react";
 
 export const Moliya = () => {
+  const url =
+    "https://sheet.best/api/sheets/08c05757-65c7-4e6a-a744-36ad0714d2a1/tabs/moliya";
+
+  const [finance, setFinance] = useState([]);
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => setFinance(res));
+  }, []);
   return (
     <div>
       <Title.Main>Moliya</Title.Main>
       <Container>
-        {finance.map((item) => {
-          return (
-            <Wrapper key={item.id}>
-              <Title.Container>
-                <Title className="title">{item.days}</Title>
-                <Title className="title">{item.dates}</Title>
-              </Title.Container>
-            </Wrapper>
-          );
-        })}
+        <Container.Month>
+          <Arrow className="arrow" />
+          <Title>{moment().format("MMMM YYYY")}</Title>
+          <Arrow />
+        </Container.Month>
+        <Container.Week>
+          {finance.map((item) => {
+            return (
+              <Wrapper key={item.id}>
+                <Title.Container>
+                  {/* <Title className="title">{item.days}</Title> */}
+                  <Title className="title">{item.today}</Title>
+                </Title.Container>
+              </Wrapper>
+            );
+          })}
+        </Container.Week>
+        <Title>{moment().format("Do-MMMM, YYYY")}</Title>
+        {/* {finance.map((item) => {
+          return ( */}
+        <Container.Price>
+          <Title.Price>{+finance[0].students + +finance[0].video}</Title.Price>
+          <Container.Month>
+            <Title>Talabalar</Title>
+            <Title>{finance[0].students}</Title>
+          </Container.Month>
+          <Container.Month>
+            <Title>Darsliklar sotuvi</Title>
+            <Title>{finance[0].video}</Title>
+          </Container.Month>
+        </Container.Price>
+        {/* );
+        })} */}
       </Container>
     </div>
   );

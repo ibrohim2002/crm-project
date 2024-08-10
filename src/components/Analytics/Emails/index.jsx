@@ -14,9 +14,9 @@ export const Emails = () => {
       .then((res) => setMail(res));
   }, []);
   return (
-    <div>
+    <Container>
       <Title.Container>Email xabarlari</Title.Container>
-      <Container>
+      <Container.Main>
         {mail.map((item) => {
           return (
             <Wrapper key={item.id}>
@@ -33,7 +33,7 @@ export const Emails = () => {
             </Wrapper>
           );
         })}
-      </Container>
-    </div>
+      </Container.Main>
+    </Container>
   );
 };
