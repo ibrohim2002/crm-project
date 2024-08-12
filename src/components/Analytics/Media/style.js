@@ -11,7 +11,6 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
   padding: 24px;
   width: 100%;
-  /* height: 128px;/ */
   border-radius: 8px;
   border: solid 1px rgba(240, 240, 240, 1);
   gap:16px;

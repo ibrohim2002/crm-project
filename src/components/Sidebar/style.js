@@ -13,6 +13,7 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 `;
 
 const common = `
@@ -70,6 +71,9 @@ Title.Exit = styled.div`
   bottom: 0px;
   border-top: 1px solid rgb(222, 225, 227);
   background-color: white;
+  .icon{
+    margin-right: 5px;
+  }
 `;
 
 export const Arrow = styled(RightArrow)`

@@ -49,6 +49,7 @@ export const Statistics = () => {
               <Container.Card>
                 {icon}
                 <Title>{item.title}</Title>
+                <Title.Plus>+</Title.Plus>
               </Container.Card>
               <Container.Card>
                 <ArrowUp/>

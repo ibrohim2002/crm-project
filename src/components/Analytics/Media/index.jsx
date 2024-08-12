@@ -51,7 +51,7 @@ export const Media = () => {
               <Container.Card>
                 <ArrowUp />
                 <Title.Percent>
-                  {Math.round(
+                  +{Math.round(
                     ((item.subscribers - item.lastMonth) / item.lastMonth) * 100
                   )}
                   %

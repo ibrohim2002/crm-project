@@ -41,6 +41,13 @@ Container.Month = styled(Container)`
 export const Wrapper = styled.div`
   display: flex;
   box-sizing: border-box;
+  cursor: pointer;
+  .active {
+    background-color: #1890ff;
+    .title {
+      color: white;
+    }
+  }
 `;
 
 export const Title = styled.div`
@@ -57,10 +64,18 @@ Title.Main = styled(Title)`
   font-weight: 700;
   padding: 16px;
 `;
+
+Title.Percent = styled(Title)`
+  font-size: 22px;
+  color: green;
+`;
+
 Title.Price = styled(Title)`
   font-size: 32px;
   font-weight: 600;
   text-align: left;
+  display: flex;
+  gap: 16px;
 `;
 
 Title.Container = styled(Title)`

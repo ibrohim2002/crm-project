@@ -33,6 +33,18 @@ Title.Number = styled(Title)`
   font-size: 32px;
 `;
 
+Title.Plus = styled(Title)`
+  font-size: 32px;
+  line-height: 19px;
+  margin: 0 8px 0 auto;
+  color: white;
+  background-color: #bbface;
+  border-radius: 50%;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+`;
+
 Title.Container = styled(Title)`
   font-size: 16px;
   font-weight: 700;
