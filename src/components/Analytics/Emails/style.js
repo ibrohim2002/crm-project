@@ -3,16 +3,15 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  `;
+  flex: 1 1 20%;
+`;
 
 Container.Main = styled(Container)`
-border: solid 1px rgba(240, 240, 240, 1);
-border-radius: 8px;
-box-sizing: border-box;
-padding: 24px;
-  
-`
+  border: solid 1px rgba(240, 240, 240, 1);
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 24px;
+`;
 
 export const Wrapper = styled.div`
   display: flex;

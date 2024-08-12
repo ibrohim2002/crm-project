@@ -3,25 +3,29 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  flex: 1 1 0%;
+`;
+
+Container.Main = styled(Container)`
   border: solid 1px rgba(240, 240, 240, 1);
   border-radius: 8px;
   box-sizing: border-box;
   padding: 24px;
-  width: 100%;
+  gap: 16px;
 `;
 
 Container.Week = styled(Container)`
-width: 100%;
-flex-direction: row;
-gap: 10px;
-border: none;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
   padding: 0;
 `;
 Container.Price = styled(Container)`
   border: none;
   width: 100%;
   padding: 0;
+  gap: 16px;
 `;
 Container.Month = styled(Container)`
   flex-direction: row;

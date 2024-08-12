@@ -4,7 +4,7 @@ import RightArrow from "../../assets/icons/arrow.svg?react";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 250px;
+  max-width: 280px;
   position: relative;
   background-color: white;
   height: 100vh;
@@ -50,6 +50,11 @@ export const Title = styled.div`
 
 Title.Main = styled.div`
   ${common};
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  border-bottom: 1px solid rgb(222, 225, 227);
+  background-color: white;
   color: #1890ff;
   font-size: 20px;
   font-weight: 600;

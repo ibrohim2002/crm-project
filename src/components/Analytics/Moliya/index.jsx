@@ -16,9 +16,9 @@ export const Moliya = () => {
       .then((res) => setFinance(res));
   }, []);
   return (
-    <div>
+    <Container>
       <Title.Main>Moliya</Title.Main>
-      <Container>
+      <Container.Main>
         <Container.Month>
           <Arrow className="arrow" />
           <Title>{moment().format("MMMM YYYY")}</Title>
@@ -52,7 +52,7 @@ export const Moliya = () => {
         </Container.Price>
         {/* );
         })} */}
-      </Container>
-    </div>
+      </Container.Main>
+    </Container>
   );
 };

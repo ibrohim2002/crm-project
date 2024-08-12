@@ -21,7 +21,6 @@ const Sidebar = () => {
     }
   };
   return (
-    <div>
       <Container>
         <Title.Main>Webbrain.crm</Title.Main>
         <Profile />
@@ -52,7 +51,6 @@ const Sidebar = () => {
         })}
         <Title.Exit>Chiqish</Title.Exit>
       </Container>
-    </div>
   );
 };
 export default Sidebar;

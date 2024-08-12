@@ -8,11 +8,12 @@ export const Container = styled.div`
   /* min-height: calc(100); */
   padding: 10px 16px;
   background: rgba(255, 255, 255, 1);
-  margin: 10px 16px;
   box-sizing: border-box;
-`;
+  margin: 10px 16px;
+  `;
 export const Wrapper = styled.div`
   display: flex;
   align-items: start;
-  gap: 30px;
+  gap: 20px;
+  box-sizing: border-box;
 `;
