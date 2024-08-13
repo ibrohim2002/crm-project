@@ -37,11 +37,16 @@ Title.Plus = styled(Title)`
   font-size: 32px;
   line-height: 19px;
   margin: 0 8px 0 auto;
-  color: white;
-  background-color: #bbface;
+  background-color: ${({ color }) =>
+    color == "#f6ffed"
+      ? "#B7EB8F"
+      : color == "#fffbe6"
+      ? "#FFE58F"
+      : "#91D5FF"};
   border-radius: 50%;
   padding: 5px;
   text-align: center;
+  color: white;
   cursor: pointer;
 `;
 

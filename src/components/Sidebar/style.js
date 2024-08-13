@@ -69,6 +69,7 @@ Title.Exit = styled.div`
   width: 100%;
   position: sticky;
   bottom: 0px;
+  color: #1890ff;
   border-top: 1px solid rgb(222, 225, 227);
   background-color: white;
   .icon{

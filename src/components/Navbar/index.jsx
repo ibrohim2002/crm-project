@@ -14,22 +14,7 @@ import {
 export const Navbar = () => {
   const [lang, setLang] = useState(localStorage.getItem('language') || "O’zbekcha");
   const [modal, setModal] = useState(0);
-  // const months = [
-  //   "Yanvar",
-  //   "Fevral",
-  //   "Mart",
-  //   "Aprel",
-  //   "May",
-  //   "Iyun",
-  //   "Iyuy",
-  //   "Avgust",
-  //   "Sentabr",
-  //   "Oktabr",
-  //   "Noyabr",
-  //   "Dekabr",
-  // ];
   const time = new Date();
-  // let month = months[time.getMonth()];
   const onLanguage = (name) => {
     localStorage.setItem("language", name);
     setLang(name)

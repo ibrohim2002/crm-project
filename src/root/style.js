@@ -9,8 +9,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-color: rgba(250, 250, 250, 1);
+  background-color: #fafafa;
   height: 100vh;
   overflow: hidden scroll;
-  width: calc(100vw - 252px);
+  width: calc(100vw - 282px);
 `;

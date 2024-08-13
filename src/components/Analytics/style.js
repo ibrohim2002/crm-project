@@ -4,12 +4,12 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: rgba(22, 37, 57, 1);
-  width: calc(100vw - 282px);
-  /* min-height: calc(100); */
+  width: calc(100vw - 322px);
   padding: 10px 16px;
   background: rgba(255, 255, 255, 1);
   box-sizing: border-box;
-  margin: 10px 16px;
+  border-radius: 8px;
+  margin: 10px;
   `;
 export const Wrapper = styled.div`
   display: flex;

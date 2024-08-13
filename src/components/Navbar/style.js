@@ -6,7 +6,7 @@ export const Container = styled.div`
   background: rgba(22, 37, 57, 1);
   width: calc(100vw - 250px);
   box-sizing: border-box;
-  padding: 10px 16px 10px 30px;
+  padding: 10px 40px;
   background: rgba(255, 255, 255, 1);
 `;
 
