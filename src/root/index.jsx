@@ -7,6 +7,7 @@ import Sidebar from "../components/Sidebar";
 import { Navbar } from "../components/Navbar";
 import { Container, Wrapper } from "./style";
 import Analytics from "../components/Analytics";
+import { Order } from "../components/Orders";
 
 export const Root = () => {
   return (
@@ -15,7 +16,8 @@ export const Root = () => {
         <Sidebar />
         <Wrapper>
           <Navbar />
-          <Analytics/>
+          {/* <Analytics/> */}
+          <Order />
         </Wrapper>
       </Container>
     </>
