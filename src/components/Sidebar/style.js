@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import RightArrow from "../../assets/icons/arrow.svg?react";
+import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -10,10 +11,22 @@ export const Container = styled.div`
   height: 100vh;
   overflow: hidden scroll;
 `;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
+`;
+
+export const NavContainer = styled.div`
+  .active {
+    color: #1890ff;
+    .icon {
+      & path {
+        fill: #1890ff;
+      }
+    }
+  }
 `;
 
 const common = `
@@ -30,24 +43,19 @@ export const Title = styled.div`
   ${common};
   display: flex;
   align-items: center;
-  color: ${({ active }) => (active ? "#1890ff" : "#929FAF")};
-  &:active,
-  &:hover {
-    color: #1890ff;
-    .icon {
-      padding-right: 10px;
-      & path {
-        fill: #1890ff;
-      }
-    }
-  }
+  color: inherit;
   .icon {
     padding-right: 10px;
     & path {
-      fill: ${({ active }) => (active ? "#1890ff" : "#929FAF")};
+      fill: "#929FAF";
     }
   }
 `;
+
+export const Nav = styled(NavLink)`
+  text-decoration: none;
+  color: #929FAF;
+`
 
 Title.Main = styled.div`
   ${common};
@@ -72,7 +80,7 @@ Title.Exit = styled.div`
   color: #1890ff;
   border-top: 1px solid rgb(222, 225, 227);
   background-color: white;
-  .icon{
+  .icon {
     margin-right: 5px;
   }
 `;

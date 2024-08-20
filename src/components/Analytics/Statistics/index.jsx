@@ -16,7 +16,7 @@ export const Statistics = () => {
 
   const [statistics, setStatistics] = useState([]);
   useEffect(() => {
-    fetch(url + '.tabs/analytics')
+    fetch(url + '/tabs/analytics')
       .then((res) => res.json())
       .then((res) => setStatistics(res));
   }, []);
