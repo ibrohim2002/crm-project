@@ -39,7 +39,7 @@ export const OrderList = () => {
     setModal(!modal);
   };
   const onAdd = () => {
-    fetch(url + "/tabs/lids", {
+    fetch(`${url}/tabs/lids`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
