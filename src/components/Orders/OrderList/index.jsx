@@ -8,17 +8,16 @@ export const OrderList = () => {
   const url = import.meta.env.VITE_BASE_URL;
   const [orders, setOrders] = useState([]);
   const [modal, setModal] = useState(false);
+  const [data, setData] = useState({});
 
-  const onEdit = () => {
-    console.log("edit");
-  };
-
-  const onDelete = () => {
-    console.log("delete");
+  const onEdit = (value) => {
+    setData(value);
+    setModal(!modal)
   };
 
   const onOrder = () => {
     setModal(!modal);
+    setData({})
   };
 
   const getData = () => {
@@ -26,6 +25,15 @@ export const OrderList = () => {
       .then((res) => res.json())
       .then((res) => setOrders(res));
   };
+
+  
+  const onDelete = (id) => {
+    fetch(`${url}/tabs/lids/id/*${id}*`, {
+      method: "DELETE",
+    }).then((res) => {
+      getData();
+    });
+  }
 
   useEffect(() => {
     getData();
@@ -37,7 +45,7 @@ export const OrderList = () => {
         <Title.Main>Buyurtmalar ro’yxati</Title.Main>
         <Btn onClick={onOrder}>+ Buyurtma qo’shish </Btn>
       </Container.Nav>
-      <ModalWindow modal={modal} onOrder={onOrder} reload={getData} />
+      <ModalWindow modal={modal} data={data} onOrder={onOrder} reload={getData} />
       <Table>
         <thead>
           <tr>
@@ -67,8 +75,8 @@ export const OrderList = () => {
               <Item
                 key={client.id}
                 client={client}
-                onDelete={onDelete}
-                onEdit={onEdit}
+                onDelete={()=>{onDelete(client.id)}}
+                onEdit={()=>{onEdit(client)}}
               />
             );
           })}

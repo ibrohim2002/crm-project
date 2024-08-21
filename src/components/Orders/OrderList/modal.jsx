@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Wrapper, Btn, Modal, AddOrder } from "./style";
 import moment from "moment";
 
-export const ModalWindow = ({ modal, onOrder, reload }) => {
+export const ModalWindow = ({ modal, onOrder, reload, data }) => {
   const url = import.meta.env.VITE_BASE_URL;
   const [orders, setOrders] = useState([]);
   const [input, setInput] = useState({
@@ -21,22 +21,47 @@ export const ModalWindow = ({ modal, onOrder, reload }) => {
     });
   };
 
-  const onAdd = () => {
-    fetch(`${url}/tabs/lids`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        ...input,
-        id: Date.now(),
-        added_date: moment().format("DD/MM/YYYY"),
-      }),
-    }).then((res) => {
-      onOrder();
-      reload();
-    });
+  const onClose = (e) => {
+    onOrder();
     setInput({});
+  };
+
+  useEffect(() => {
+    setInput({ ...input, ...data });
+  }, [data]);
+
+  const onAdd = () => {
+    if (data) {
+      fetch(`${url}/tabs/lids/id/*${data.id}*`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...input,
+        }),
+      }).then((res) => {
+        onClose();
+        reload();
+      });
+      setInput({});
+    } else {
+      fetch(`${url}/tabs/lids`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...input,
+          id: Date.now(),
+          added_date: moment().format("DD/MM/YYYY"),
+        }),
+      }).then((res) => {
+        onClose();
+        reload();
+      });
+      setInput({});
+    }
   };
 
   return modal ? (
@@ -79,7 +104,7 @@ export const ModalWindow = ({ modal, onOrder, reload }) => {
           required
         />
         <Wrapper>
-          <button onClick={onOrder} style={{ background: "red" }}>
+          <button onClick={onClose} style={{ background: "red" }}>
             O'chirish
           </button>
           <button onClick={onAdd}>Saqlash</button>
