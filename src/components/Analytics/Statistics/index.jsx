@@ -12,7 +12,8 @@ import { Container } from "./style";
 import { useState } from "react";
 
 export const Statistics = () => {
-  const url = import.meta.env.VITE_BASE_URL;
+  // const url = import.meta.env.VITE_BASE_URL;
+  const url = 'https://sheet.best/api/sheets/08c05757-65c7-4e6a-a744-36ad0714d2a1';
 
   const [statistics, setStatistics] = useState([]);
   useEffect(() => {
