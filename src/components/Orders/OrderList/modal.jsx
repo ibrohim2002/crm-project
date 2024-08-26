@@ -30,6 +30,7 @@ export const ModalWindow = ({ modal, onOrder, reload, data }) => {
     setInput({ ...input, ...data });
   }, [data]);
 
+  console.log(data);
   const onAdd = () => {
     if (data) {
       fetch(`${url}/tabs/lids/id/*${data.id}*`, {

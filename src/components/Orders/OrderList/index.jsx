@@ -18,7 +18,7 @@ export const OrderList = () => {
 
   const onOrder = () => {
     setModal(!modal);
-    setData({})
+    setData(null)
   };
 
   const getData = () => {
