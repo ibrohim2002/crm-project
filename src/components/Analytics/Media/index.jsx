@@ -9,7 +9,7 @@ import ArrowUp from "../../../assets/statistics/arrow-up.svg?react";
 
 export const Media = () => {
   const url =
-    "https://sheet.best/api/sheets/08c05757-65c7-4e6a-a744-36ad0714d2a1/tabs/media";
+    "https://api.sheetbest.com/sheets/b9919168-806d-4ce7-b4fc-30667c9c0808/tabs/media";
 
   const [media, setMedia] = useState([]);
   useEffect(() => {
