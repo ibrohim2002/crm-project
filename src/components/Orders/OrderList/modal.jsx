@@ -3,7 +3,7 @@ import { Wrapper, Btn, Modal, AddOrder } from "./style";
 import moment from "moment";
 
 export const ModalWindow = ({ modal, onOrder, reload, data }) => {
-  const url = import.meta.env.VITE_BASE_URL;
+  const url = "https://api.sheetbest.com/sheets/b9919168-806d-4ce7-b4fc-30667c9c0808";
   const [orders, setOrders] = useState([]);
   const [input, setInput] = useState({
     name: "",
